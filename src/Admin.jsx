@@ -1,5 +1,6 @@
 import React from "react";
 import CreateUser from "./containers/CreateUser";
+import GetUsers from "./containers/GetUsers";
 
 
 const Admin = () => {
@@ -8,6 +9,7 @@ const Admin = () => {
 			<h1>Page: Admin.jsx</h1>
 			<div className="p-1">
 				<CreateUser />
+				<GetUsers />
 
 			</div>
 		</>
