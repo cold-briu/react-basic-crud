@@ -1,12 +1,13 @@
 import React from "react";
-import UserForm from "./components/UserForm";
+import CreateUser from "./containers/CreateUser";
+
 
 const Admin = () => {
 	return (
 		<>
-			<h1>admin</h1>
+			<h1>Page: Admin.jsx</h1>
 			<div className="p-1">
-				<UserForm />
+				<CreateUser />
 
 			</div>
 		</>

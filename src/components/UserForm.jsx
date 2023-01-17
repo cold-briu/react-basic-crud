@@ -1,10 +1,18 @@
 import React, { useState } from "react"
 
-const UserForm = () => {
+const UserForm = ({ sendUser }) => {
 	const [id, setId] = useState("")
 	const [username, setUsername] = useState("")
 	const [name, setName] = useState("")
 	const [age, setAge] = useState("")
+
+	const clearForm = () => {
+		setId("")
+		setUsername("")
+		setName("")
+		setAge("")
+
+	}
 
 	const handleId = (e) => {
 		setId(e.target.value)
@@ -27,12 +35,14 @@ const UserForm = () => {
 		const user = {
 			id, username, name, age
 		}
-		console.log(user);
+		sendUser(user)
+		clearForm()
 	}
 
 
 	return (
 		<div className="container">
+			<span>Component: UserForm.jsx</span>
 			<div className="row">
 
 				<div className="col-3">
