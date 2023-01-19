@@ -4,6 +4,7 @@ import { createBrowserRouter, Route, RouterProvider, createRoutesFromElements } 
 import Navbar from "./Navbar"
 import Home from "./Home"
 import Admin from "./Admin"
+import Users from "./Users"
 
 
 
@@ -14,17 +15,18 @@ const router = createBrowserRouter(
 
 			<Route path="/" element={<Home />} />
 			<Route path="/admin" element={<Admin />} />
+			<Route path="/users" element={<Users />} />
 
 		</Route>
 	)
 )
 
 // declarar componente
-const App = () => {
+const AppRouter = () => {
 	return (
 		<RouterProvider router={router} />
 	)
 }
 
 // exportar componente
-export default App // default export 
+export default AppRouter // default export 
