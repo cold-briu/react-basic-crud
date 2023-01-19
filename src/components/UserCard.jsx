@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const UserCard = ({ username, name, id }) => {
 	const LINK_ADDRESS = `/users/${id}`
+
 	return (
 		<div className="card mb-2">
 			<div className="card-body">
@@ -15,6 +16,10 @@ const UserCard = ({ username, name, id }) => {
 				<Link className='btn btn-primary' to={LINK_ADDRESS} >
 					Editar
 				</Link>
+				<button onClick={() => console.log("eliminar!")} className="btn btn-danger">
+					eliminar
+
+				</button>
 			</div>
 		</div>
 	)
