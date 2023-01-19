@@ -24,11 +24,13 @@ const GetUsers = () => {
 		getData()
 	}, [])
 
+
+
+
 	return (
 		<>
-			<h3>GetUsers.jsx</h3>
 
-
+			<h3>Container: GetUsers.jsx c:</h3>
 			<div className="container">
 				<div className="row">
 					<span>UsersList.jsx</span>
@@ -42,11 +44,9 @@ const GetUsers = () => {
 					</div>
 				</div>
 			</div>
-
-
 		</>
-
 	)
+
 }
 
 export default GetUsers

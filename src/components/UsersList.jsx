@@ -6,6 +6,7 @@ const UsersList = ({ list }) => {
 
 	return (
 		<div className="p-3 mt-1">
+			component:
 			{
 				list.map(
 					(e) => {

@@ -11,7 +11,6 @@ const Admin = () => {
 			<div className="p-1">
 				<CreateUser />
 				<GetUsers />
-
 			</div>
 		</>
 	)

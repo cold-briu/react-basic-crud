@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const UserCard = ({ username, name, id }) => {
 	const LINK_ADDRESS = `/users/${id}`
-
+	console.log(LINK_ADDRESS);
 	return (
 		<div className="card mb-2">
 			<div className="card-body">
