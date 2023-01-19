@@ -1,17 +1,16 @@
 import React, { useState } from "react"
 
-const UserForm = ({ sendUser }) => {
-	const [id, setId] = useState("")
-	const [username, setUsername] = useState("")
-	const [name, setName] = useState("")
-	const [age, setAge] = useState("")
+const UserForm = ({ sendUser, initialValues }) => {
+	const [id, setId] = useState(initialValues?.id ?? "")
+	const [username, setUsername] = useState(initialValues?.username ?? "")
+	const [name, setName] = useState(initialValues?.name ?? "")
+	const [age, setAge] = useState(initialValues?.age ?? "")
 
 	const clearForm = () => {
 		setId("")
 		setUsername("")
 		setName("")
 		setAge("")
-
 	}
 
 	const handleId = (e) => {
@@ -46,7 +45,7 @@ const UserForm = ({ sendUser }) => {
 			<div className="row">
 
 				<div className="col-3">
-					<h3>new user:</h3>
+					<h3>{initialValues ? "update user" : "new user"}</h3>
 				</div>
 
 				<div className="col-6 pt-4">

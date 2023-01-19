@@ -36,8 +36,7 @@ const GetUserDetails = () => {
 			{
 				data &&
 				<UserDetails
-					id={data.id} name={data.name}
-					username={data.username} age={data.age}
+					userData={data}
 				/>
 			}
 		</>

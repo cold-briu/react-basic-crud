@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import UserForm from './UserForm'
+
 
 const UserDetails = ({
-	id, name, username, age
+	userData
 }) => {
+	const [username, setUsername] = useState(userData.username)
+
+	const handleUsername = (e) => {
+		setUsername(e.target.value)
+		console.log(e.target.value);
+	}
+
+
 	return (
 		<>
-			<p>id: {id}</p>
-			<p>name: {name}</p>
-			<p>username: {username}</p>
-			<p>age: {age}</p>
+			<UserForm initialValues={userData} />
 		</>
 	)
 }
