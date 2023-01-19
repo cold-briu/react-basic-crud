@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getUserDetails } from "../api/users";
-import UserDetails from "../components/UserDetails";
+import { getUserDetails, updateUser } from "../api/users";
+import UserForm from '../components/UserForm';
 
 const GetUserDetails = () => {
 	const params = useParams()
@@ -9,6 +9,12 @@ const GetUserDetails = () => {
 	const [error, setError] = useState("")
 	const [isLoading, setIsLoading] = useState(false)
 	const [data, setData] = useState(null)
+
+	const sendData = async (data) => {
+		let res = await updateUser(data.id, data)
+		console.log(res);
+		console.log("send data", data);
+	}
 
 	const getData = async () => {
 		try {
@@ -35,8 +41,9 @@ const GetUserDetails = () => {
 			{isLoading && <p>Loading...</p>}
 			{
 				data &&
-				<UserDetails
-					userData={data}
+				<UserForm
+					initialValues={data}
+					sendUser={sendData}
 				/>
 			}
 		</>

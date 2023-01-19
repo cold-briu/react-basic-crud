@@ -18,3 +18,8 @@ export const createUser = async (newUser) => {
 	let res = await api.post("/users", newUser)
 	return res
 }
+
+export const updateUser = async (id, newUser) => {
+	let res = await api.put(`/users/${id}`, newUser)
+	return res
+}
