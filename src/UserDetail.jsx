@@ -1,10 +1,16 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import GetUserDetails from "./containers/GetUserDetails";
 
 const UserDetail = () => {
-	const params = useParams()
 	return (
-		<div>UserDetail id: {params.id}</div>
+
+		<>
+			<h1>Page: UserDetail.jsx</h1>
+			<div className="p-1">
+				<GetUserDetails />
+			</div>
+		</>
+
 	)
 }
 

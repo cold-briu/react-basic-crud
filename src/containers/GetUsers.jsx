@@ -30,10 +30,9 @@ const GetUsers = () => {
 	return (
 		<>
 
-			<h3>Container: GetUsers.jsx c:</h3>
+			<h3>Container: GetUsers.jsx</h3>
 			<div className="container">
 				<div className="row">
-					<span>UsersList.jsx</span>
 					<div className="col-3">
 						<h3>get users</h3>
 					</div>

@@ -9,6 +9,11 @@ export const getUsers = async () => {
 	return res
 }
 
+export const getUserDetails = async (id) => {
+	let res = await api.get(`/users/${id}`)
+	return res
+}
+
 export const createUser = async (newUser) => {
 	let res = await api.post("/users", newUser)
 	return res
