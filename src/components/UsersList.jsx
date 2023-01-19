@@ -1,13 +1,27 @@
 import React from 'react'
+import UserCard from './UserCard'
+
 
 const UsersList = ({ list }) => {
 
 	return (
-
 		<div className="p-3 mt-1">
-			{list.map((e, i) => <p key={i}>{e.username}</p>)}
-		</div>
+			{
+				list.map(
+					(e) => {
+						return (
+							<UserCard
+								key={e.id}
+								username={e.username}
+								name={e.name}
+								id={e.id}
+							/>
+						)
+					}
 
+				)
+			}
+		</div>
 	)
 }
 

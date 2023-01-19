@@ -4,6 +4,7 @@ import GetUsers from "./containers/GetUsers";
 
 
 const Admin = () => {
+
 	return (
 		<>
 			<h1>Page: Admin.jsx</h1>
