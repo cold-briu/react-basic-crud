@@ -8,6 +8,11 @@ const GetUsers = () => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [data, setData] = useState(null)
 
+
+	const deleteUser = () => {
+		console.log("saludos desde GetUsers.jsx");
+	}
+
 	const getData = async () => {
 		try {
 			setIsLoading(true)
@@ -29,7 +34,6 @@ const GetUsers = () => {
 
 	return (
 		<>
-
 			<h3>Container: GetUsers.jsx</h3>
 			<div className="container">
 				<div className="row">
@@ -39,7 +43,7 @@ const GetUsers = () => {
 					<div className="col-6">
 						{isLoading && <p>Loading...</p>}
 						{error && <p>{error}</p>}
-						{data && <UsersList list={data} />}
+						{data && <UsersList list={data} handleDelete={deleteUser} />}
 					</div>
 				</div>
 			</div>

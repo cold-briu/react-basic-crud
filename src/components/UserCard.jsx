@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const UserCard = ({ username, name, id }) => {
+const UserCard = ({ username, name, id, handleDelete }) => {
 	const LINK_ADDRESS = `/users/${id}`
+
 
 	return (
 		<div className="card mb-2">
@@ -16,7 +17,7 @@ const UserCard = ({ username, name, id }) => {
 				<Link className='btn btn-primary' to={LINK_ADDRESS} >
 					Editar
 				</Link>
-				<button onClick={() => console.log("eliminar!")} className="btn btn-danger">
+				<button onClick={handleDelete} className="btn btn-danger">
 					eliminar
 
 				</button>
