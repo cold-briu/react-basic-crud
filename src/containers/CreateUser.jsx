@@ -9,7 +9,7 @@ const CreateUser = () => {
 	const sendUser = async (newUser) => {
 		try {
 			setIsLoading(true)
-			let res = await createUser(newUser)
+			await createUser(newUser)
 			setIsLoading(false)
 
 		} catch (error) {
