@@ -2,33 +2,15 @@
   "users": [
     {
       "id": "2",
-      "username": "@usr",
-      "name": "nuevo nombre",
-      "age": "99"
+      "username": "@b",
+      "name": "b",
+      "age": "12"
     },
     {
-      "id": "3",
-      "username": "@asdasd",
-      "name": "blabla",
-      "age": "40"
-    },
-    {
-      "id": "4",
-      "username": "@:D:D",
-      "name": "asdasdasda",
-      "age": "444"
-    },
-    {
-      "id": "99",
-      "username": "@hatchet_fella",
-      "name": "kai backpacker",
-      "age": "25"
-    },
-    {
-      "id": "5",
-      "username": "@lol",
-      "name": "josefa",
-      "age": "45"
+      "id": "123",
+      "username": "sdf",
+      "name": "asdf",
+      "age": "asdf"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UsersList from "../components/UsersList";
-import { getUsers } from "../api/users";
+import { getUsers, deleteUser as deleteUserService } from "../api/users";
 
 const GetUsers = () => {
 
@@ -9,8 +9,18 @@ const GetUsers = () => {
 	const [data, setData] = useState(null)
 
 
-	const deleteUser = () => {
-		console.log("saludos desde GetUsers.jsx");
+	const deleteUser = async (userId) => {
+		try {
+
+			setIsLoading(true)
+			await deleteUserService(userId)
+			setData(null)
+			setIsLoading(false)
+
+		} catch (error) {
+			setIsLoading(false)
+			setError(error.message)
+		}
 	}
 
 	const getData = async () => {
@@ -26,8 +36,12 @@ const GetUsers = () => {
 	}
 
 	useEffect(() => {
-		getData()
-	}, [])
+
+		if (!data) {
+			getData()
+		}
+
+	}, [data])
 
 
 

@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 const UserCard = ({ username, name, id, handleDelete }) => {
 	const LINK_ADDRESS = `/users/${id}`
 
+	const handleDeleteWithId = () => {
+		return handleDelete(id)
+	}
 
 	return (
 		<div className="card mb-2">
@@ -17,9 +20,8 @@ const UserCard = ({ username, name, id, handleDelete }) => {
 				<Link className='btn btn-primary' to={LINK_ADDRESS} >
 					Editar
 				</Link>
-				<button onClick={handleDelete} className="btn btn-danger">
+				<button onClick={handleDeleteWithId} className="btn btn-danger">
 					eliminar
-
 				</button>
 			</div>
 		</div>
