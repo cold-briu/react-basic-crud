@@ -53,7 +53,7 @@ const UserForm = ({ sendUser, initialValues }) => {
 					<h3>{initialValues ? "update user" : "new user"}</h3>
 				</div>
 
-				<div className="col-6 pt-4">
+				<div className="col-6 pt-4 mb-5">
 					<form>
 						<input
 							placeholder="id" type="text" className="form-control mb-2"

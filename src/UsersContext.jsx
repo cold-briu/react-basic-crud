@@ -40,8 +40,8 @@ const UsersProvider = ({ children }) => {
   }
 
   const getData = async () => {
-    setData(null)
     try {
+      setData(null)
       setIsLoading(true)
       const res = await getUsers()
       setIsLoading(false)
