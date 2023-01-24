@@ -1,10 +1,15 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { Context } from "../UsersContext";
+
 
 const UserForm = ({ sendUser, initialValues }) => {
 	const [id, setId] = useState(initialValues?.id ?? "")
 	const [username, setUsername] = useState(initialValues?.username ?? "")
 	const [name, setName] = useState(initialValues?.name ?? "")
 	const [age, setAge] = useState(initialValues?.age ?? "")
+
+
+	const { userCreate: { isLoading } } = useContext(Context)
 
 	const clearForm = () => {
 		setId("")
@@ -70,7 +75,7 @@ const UserForm = ({ sendUser, initialValues }) => {
 							onChange={handleAge} value={age}
 						/>
 
-						<button className="btn btn-success" onClick={handleSubmit}>
+						<button disabled={isLoading} className="btn btn-success" onClick={handleSubmit}>
 							submit
 						</button>
 					</form>

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { deleteUser as deleteUserService, getUsers } from "./api/users";
+import { deleteUser as deleteUserService, getUsers, createUser } from "./api/users";
 
 export const Context = createContext()
 export const ContextDispatch = createContext()
@@ -10,15 +10,29 @@ const UsersProvider = ({ children }) => {
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
+  const [errorCreateUser, setErrorCreateUser] = useState("")
+  const [isLoadingCreateUser, setIsLoadingCreateUser] = useState(false)
+
+  const sendUser = async (newUser) => {
+    try {
+      setIsLoadingCreateUser(true)
+      await createUser(newUser)
+      setIsLoadingCreateUser(false)
+      await getData()
+    } catch (error) {
+      setIsLoadingCreateUser(false)
+      setErrorCreateUser(error.message)
+    }
+  }
+
 
   const deleteUser = async (userId) => {
     try {
 
       setIsLoading(true)
       await deleteUserService(userId)
-      setData(null)
       setIsLoading(false)
-
+      await getData()
     } catch (error) {
       setIsLoading(false)
       setError(error.message)
@@ -26,6 +40,7 @@ const UsersProvider = ({ children }) => {
   }
 
   const getData = async () => {
+    setData(null)
     try {
       setIsLoading(true)
       const res = await getUsers()
@@ -38,11 +53,12 @@ const UsersProvider = ({ children }) => {
   }
 
   const myState = {
-    data, error, isLoading
+    usersList: { data, error, isLoading },
+    userCreate: { data: null, error: errorCreateUser, isLoading: isLoadingCreateUser }
   }
 
   const myDispatch = {
-    getData, deleteUser
+    getData, deleteUser, sendUser
   }
 
 

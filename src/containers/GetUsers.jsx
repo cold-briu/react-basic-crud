@@ -5,7 +5,7 @@ import { Context, ContextDispatch } from "../UsersContext";
 
 const GetUsers = () => {
 
-	const { data, error, isLoading } = useContext(Context)
+	const { usersList: { data, error, isLoading } } = useContext(Context)
 	const { getData } = useContext(ContextDispatch)
 
 	useEffect(() => {
