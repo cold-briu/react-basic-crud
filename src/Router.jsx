@@ -6,6 +6,7 @@ import Home from "./Home"
 import Admin from "./Admin"
 import Users from "./Users"
 import UserDetail from "./UserDetail"
+import UsersContext from "./UsersContext"
 
 
 
@@ -26,7 +27,9 @@ const router = createBrowserRouter(
 // declarar componente
 const AppRouter = () => {
 	return (
-		<RouterProvider router={router} />
+		<UsersContext>
+			<RouterProvider router={router} />
+		</UsersContext>
 	)
 }
 

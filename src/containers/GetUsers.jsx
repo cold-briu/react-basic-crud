@@ -9,6 +9,7 @@ const GetUsers = () => {
 	const [data, setData] = useState(null)
 
 
+
 	const deleteUser = async (userId) => {
 		try {
 

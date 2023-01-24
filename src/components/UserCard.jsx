@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from "../UsersContext";
+
 
 const UserCard = ({ username, name, id, handleDelete }) => {
 	const LINK_ADDRESS = `/users/${id}`
 
+	const data = useContext(Context)
+	console.log(data);
 	const handleDeleteWithId = () => {
 		return handleDelete(id)
 	}
