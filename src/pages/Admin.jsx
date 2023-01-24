@@ -1,6 +1,6 @@
 import React from "react";
-import CreateUser from "./containers/CreateUser";
-import GetUsers from "./containers/GetUsers";
+import CreateUser from "../containers/CreateUser";
+import GetUsers from "../containers/GetUsers";
 
 
 const Admin = () => {

@@ -1,40 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import UsersList from "../components/UsersList";
-import { getUsers, deleteUser as deleteUserService } from "../api/users";
+import { getUsers } from "../api/users";
+import { Context, ContextDispatch } from "../UsersContext";
 
 const GetUsers = () => {
 
-	const [error, setError] = useState("")
-	const [isLoading, setIsLoading] = useState(false)
-	const [data, setData] = useState(null)
-
-
-
-	const deleteUser = async (userId) => {
-		try {
-
-			setIsLoading(true)
-			await deleteUserService(userId)
-			setData(null)
-			setIsLoading(false)
-
-		} catch (error) {
-			setIsLoading(false)
-			setError(error.message)
-		}
-	}
-
-	const getData = async () => {
-		try {
-			setIsLoading(true)
-			const res = await getUsers()
-			setIsLoading(false)
-			setData(res.data)
-		} catch (error) {
-			setIsLoading(false)
-			setError(error.message)
-		}
-	}
+	const { data, error, isLoading } = useContext(Context)
+	const { getData } = useContext(ContextDispatch)
 
 	useEffect(() => {
 
@@ -43,9 +15,6 @@ const GetUsers = () => {
 		}
 
 	}, [data])
-
-
-
 
 	return (
 		<>
@@ -58,7 +27,7 @@ const GetUsers = () => {
 					<div className="col-6">
 						{isLoading && <p>Loading...</p>}
 						{error && <p>{error}</p>}
-						{data && <UsersList list={data} handleDelete={deleteUser} />}
+						{data && <UsersList list={data} />}
 					</div>
 				</div>
 			</div>

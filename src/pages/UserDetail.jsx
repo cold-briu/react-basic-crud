@@ -1,5 +1,5 @@
 import React from 'react'
-import GetUserDetails from "./containers/GetUserDetails";
+import GetUserDetails from "../containers/GetUserDetails";
 
 const UserDetail = () => {
 	return (

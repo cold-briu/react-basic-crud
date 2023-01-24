@@ -2,7 +2,7 @@ import React from 'react'
 import UserCard from './UserCard'
 
 
-const UsersList = ({ list, handleDelete }) => {
+const UsersList = ({ list }) => {
 
 
 	return (
@@ -21,7 +21,6 @@ const UsersList = ({ list, handleDelete }) => {
 								username={e.username}
 								name={e.name}
 								id={e.id}
-								handleDelete={handleDelete}
 							/>
 						)
 					}

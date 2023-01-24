@@ -1,12 +1,13 @@
 // importar librerías y otros archivos
 import React from "react"
 import { createBrowserRouter, Route, RouterProvider, createRoutesFromElements } from "react-router-dom"
-import Navbar from "./Navbar"
-import Home from "./Home"
-import Admin from "./Admin"
-import Users from "./Users"
-import UserDetail from "./UserDetail"
-import UsersContext from "./UsersContext"
+import UsersProvider from "./UsersContext"
+
+import Navbar from "./pages/Navbar"
+import Home from "./pages/Home"
+import Admin from "./pages/Admin"
+import Users from "./pages/Users"
+import UserDetail from "./pages/UserDetail"
 
 
 
@@ -27,9 +28,9 @@ const router = createBrowserRouter(
 // declarar componente
 const AppRouter = () => {
 	return (
-		<UsersContext>
+		<UsersProvider>
 			<RouterProvider router={router} />
-		</UsersContext>
+		</UsersProvider>
 	)
 }
 

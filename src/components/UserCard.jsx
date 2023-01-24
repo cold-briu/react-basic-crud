@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from "../UsersContext";
+import { ContextDispatch } from "../UsersContext";
 
 
-const UserCard = ({ username, name, id, handleDelete }) => {
+const UserCard = ({ username, name, id }) => {
 	const LINK_ADDRESS = `/users/${id}`
 
-	const data = useContext(Context)
-	console.log(data);
+	const { deleteUser } = useContext(ContextDispatch)
+
+
 	const handleDeleteWithId = () => {
-		return handleDelete(id)
+		return deleteUser(id)
 	}
 
 	return (
